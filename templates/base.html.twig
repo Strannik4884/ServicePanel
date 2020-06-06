@@ -20,7 +20,7 @@
 <body>
 <header class="header">
     <nav class="navbar_padding navbar navbar-expand-lg">
-        <a class="navbar-brand" href="{{ path('admin') }}">
+        <a class="navbar-brand" href="{{ path('app_home') }}">
             <img src="{{ asset('img/rosatom.png') }}" class="image_rosatom" alt="rosatom">
             <span>Личный кабинет сотрудника</span>
         </a>
@@ -48,6 +48,16 @@
                         <img src="{{ asset('img/search-solid.svg') }}" width="20" height="20" alt="">
                     </a>
                 </li>
+                <li class="nav-item dropdown dropdown_item">
+                    {% if app.user is same as(null) %}
+                        <a class="nav-link" href="{{ path('app_login') }}" role="button">Войти</a>
+                    {% else %}
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ app.user.name }}</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('app_logout') }}">Выход</a>
+                        </div>
+                    {% endif %}
+                </li>
             </ul>
         </div>
     </nav>
@@ -56,13 +66,14 @@
 <div class="container_fix">
     <div class="main d-flex flex-column justify-content-center align-items-center">
         <p class="main__pretitle mt-4 mb-4 col-lg-7 col-11">
-            Добро пожаловать в личный кабинет документации! Выберите нужную документацию и ознакомьтесь с ней с помощью удобной онлайн-документации!
+            Добро пожаловать в личный кабинет документации! Выберите нужную документацию и ознакомьтесь с ней с помощью удобного веб-формата!
         </p>
         <div class="main__title d-flex flex-column align-items-center revealator-slideup revealator-delay2 revealator-once">
-            <h2 class="main__position">Документация</h2>
+            <h2 class="main__position">Онлайн документация</h2>
         </div>
         <div class="main__content">
-            <!-- Тут должен быть контент -->
+            {% block content %}
+            {% endblock %}
         </div>
     </div>
 </div>
