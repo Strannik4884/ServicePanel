@@ -40,6 +40,11 @@ class User implements UserInterface
      */
     private $name;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $position;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -126,6 +131,18 @@ class User implements UserInterface
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getPosition(): ?string
+    {
+        return $this->position;
+    }
+
+    public function setPosition(?string $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }
