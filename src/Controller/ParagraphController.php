@@ -27,12 +27,12 @@ class ParagraphController extends AbstractController
 
         $handle = fopen("../001.json", "r");
         $contents = fread($handle, filesize("../001.json"));
-        /*
-        $paragraph = $serializer->deserialize($contents, Paragraph::class, 'json');
-        var_dump($contents);
-        */
+
+
+        $contents = iconv('windows-1251',"UTF-8//IGNORE", $contents);
 
         $data = json_decode($contents, true);
+
         $paragraphs = array();
         foreach($data['paragraph'] as $result) :
             $paragraph = new Paragraph();
@@ -42,7 +42,6 @@ class ParagraphController extends AbstractController
             $paragraph->setAppointed($result['appointed']);
             $paragraphs[] = $paragraph;
         endforeach;
-//        var_dump($paragraphs[0]);
         return $this->render('paragraph/index.html.twig', [
             'controller_name' => 'ParagraphController',
             'paragraphs' => $paragraphs
