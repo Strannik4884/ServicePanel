@@ -24,12 +24,14 @@ class AppFixtures extends Fixture
         $user->setEmail('test@test.ru');
         $user->setPassword($this->passwordEncoder->encodePassword($user,'Test123!'));
         $user->setRoles(array('ROLE_USER'));
+        $user->setPosition('Охранник');
         // create admin
         $admin = new User();
         $admin->setName('Admin');
         $admin->setEmail('admin@test.ru');
         $admin->setPassword($this->passwordEncoder->encodePassword($admin, 'Odmin123!'));
         $admin->setRoles(array('ROLE_ADMIN'));
+        $admin->setPosition('Специалист тех. обслуживания');
         // insert users to database
         $manager->persist($user);
         $manager->persist($admin);
