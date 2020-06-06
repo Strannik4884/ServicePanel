@@ -42,10 +42,10 @@ class ParagraphController extends AbstractController
             $paragraph->setAppointed($result['appointed']);
             $paragraphs[] = $paragraph;
         endforeach;
-        var_dump($paragraphs[0]);
+//        var_dump($paragraphs[0]);
         return $this->render('paragraph/index.html.twig', [
             'controller_name' => 'ParagraphController',
-            'contents' => $contents,
+            'paragraphs' => $paragraphs
         ]);
     }
 }
