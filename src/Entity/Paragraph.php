@@ -4,7 +4,6 @@ namespace App\Entity;
 
 class Paragraph
 {
-
     private $id;
 
     private $name;
