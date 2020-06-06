@@ -12,8 +12,6 @@ use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
-
-
 class ParagraphController extends AbstractController
 {
     /**
@@ -28,8 +26,8 @@ class ParagraphController extends AbstractController
         $handle = fopen("../001.json", "r");
         $contents = fread($handle, filesize("../001.json"));
 
-
-        $contents = iconv('windows-1251',"UTF-8//IGNORE", $contents);
+        // windows-1251
+        $contents = iconv('utf-8',"UTF-8//IGNORE", $contents);
 
         $data = json_decode($contents, true);
 
