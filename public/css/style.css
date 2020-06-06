@@ -1,20 +1,84 @@
-html, body {
-    height: 100%;
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  src: url("../font/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-main {
-    min-height: 100%;
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
 }
 
-.content {
-    overflow:auto;
-    padding-bottom:150px; /* this needs to be bigger than footer height*/
+p {
+  margin: 0;
+}
+
+a {
+  text-decoratin: none;
+  color: #000000;
+}
+
+.lang_bg {
+  background-color: #DFE7EA;
+  border-radius: 5px;
+}
+
+.lang_trinagle {
+  margin-top: 3px;
+}
+
+.navbar_padding {
+  padding: 0 135px;
+}
+
+.dropdown_item {
+  margin-right: 45px;
+  border: 0.5px solid #C2C9CC;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.block-title {
+  background-size: cover;
+  height: 421px;
+}
+
+.block-title__title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 45px;
+}
+
+.main__pretitle {
+  font-size: 20px;
+  text-align: justify;
+}
+
+.main__position {
+  font-size: 28px;
+  letter-spacing: 0.15em;
+}
+
+.main__text {
+  font-size: 20px;
+  color: #52636C;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer {
-    position: relative;
-    margin-top: -150px; /* negative value of footer height */
-    height: 150px;
-    clear:both;
-    padding-top:20px;
+  padding: 23px 0;
+  border: 1px solid #E0E7EA;
+}
+
+.footer__link {
+  color: blue;
 }
