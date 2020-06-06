@@ -2,9 +2,6 @@
 
 namespace App\Entity;
 
-use App\Repository\ParagraphRepository;
-use Doctrine\ORM\Mapping as ORM;
-
 class Paragraph
 {
 
@@ -17,6 +14,7 @@ class Paragraph
     private $profession;
 
     private $appointed;
+
 
     public function getId(): ?int
     {
