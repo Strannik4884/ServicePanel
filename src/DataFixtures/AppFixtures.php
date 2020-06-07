@@ -40,16 +40,16 @@ class AppFixtures extends Fixture
         // create position
         $position = new Position();
         $position->setName('Коммерческий агент');
-        $position->setUserId(1);
+        $position->setUserId($user);
         // insert position to database
         $manager->persist($position);
         // create document
-        $position = new Document();
-        $position->setSrcRtf('../public/uploads/docs/001-5edc9b266578a.rtf');
-        $position->setSrcHtml('uploads/001.html');
-        $position->setPositionId(1);
+        $document = new Document();
+        $document->setSrcRtf('../public/uploads/docs/001-5edc9b266578a.rtf');
+        $document->setSrcHtml('uploads/001.html');
+        $document->setPositionId($position);
         // insert position to database
-        $manager->persist($position);
+        $manager->persist($document);
         // flush manager
         $manager->flush();
     }
