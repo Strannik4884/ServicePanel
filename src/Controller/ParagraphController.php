@@ -30,8 +30,8 @@ class ParagraphController extends AbstractController
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
 
-        $handle = fopen("../001.json", "r");
-        $contents = fread($handle, filesize("../001.json"));
+        $handle = fopen("../incoming_files/001.json", "r");
+        $contents = fread($handle, filesize("../incoming_files/001.json"));
 
         // windows-1251
         $contents = iconv('utf-8',"UTF-8//IGNORE", $contents);
