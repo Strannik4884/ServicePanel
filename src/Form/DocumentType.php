@@ -24,6 +24,7 @@ class DocumentType extends AbstractType
                         'maxSize' => '20M',
                         'mimeTypes' => [
                             'application/rtf',
+                            'text/rtf'
                         ],
                         'mimeTypesMessage' => 'Пожалуйста, загрузите валидный RTF документ',
                     ])
