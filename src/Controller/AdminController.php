@@ -36,22 +36,16 @@ class AdminController extends AbstractController
                 /** @var TYPE_NAME $safeFilename */
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$rtfFile->guessExtension();
 
-                // Move the file to the directory where brochures are stored
                 try {
                     $rtfFile->move(
                         $this->getParameter('docs_directory'),
                         $newFilename
                     );
                 } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
-                }
 
-                // updates the 'brochureFilename' property to store the PDF file name
-                // instead of its contents
+                }
                 $document->setSrcRtf($newFilename);
             }
-
-            // ... persist the $document variable or any other work
 
             return $this->redirect($this->generateUrl('admin'));
         }

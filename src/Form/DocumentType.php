@@ -21,7 +21,7 @@ class DocumentType extends AbstractType
                 'required' => false,
                 'constraints' => [
                     new File([
-                        'maxSize' => '1024k',
+                        'maxSize' => '20M',
                         'mimeTypes' => [
                             'application/rtf',
                         ],
