@@ -19,3 +19,5 @@
 7) Сделать в выбранном веб-сервере доменом папку *public*
 
 Для удобства проект был развёрнут [здесь](http://mirror-reflection.ru)
+
+Наработки дизайна в Figma находятся [здесь](https://www.figma.com/file/qbGIpzyoYGONxQDa88DI4g/%D0%A0%D0%BE%D1%81%D0%B0%D1%82%D0%BE%D0%BC)
